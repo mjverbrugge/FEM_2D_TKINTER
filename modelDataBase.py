@@ -1,0 +1,10 @@
+vertices = {}
+lines = {}
+faces = {}
+boundaryConditions = {}
+sets = {}
+loads = {}
+nodes = {}
+elements = {}
+materialProperties = {}
+sections = {}

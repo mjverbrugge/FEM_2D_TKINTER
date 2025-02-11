@@ -3,36 +3,7 @@ import copy
 
 # Custom imports
 import canvas.data as canvasData
-
-###
-# Draw
-###
-
-def draw(myCanvas):
-    myCanvas.delete("all")
-
-    squareNodes = (
-                   (0,0),
-                   (200,200),
-                  )
-    
-    scaledNodes = (
-                    (squareNodes[0][0]*canvasData.scale, squareNodes[0][1]*canvasData.scale),
-                    (squareNodes[1][0]*canvasData.scale, squareNodes[1][1]*canvasData.scale)
-                  )
-
-    panNodes = (
-                    (scaledNodes[0][0]-canvasData.viewpoint[0], scaledNodes[0][1]-canvasData.viewpoint[1]),
-                    (scaledNodes[1][0]-canvasData.viewpoint[0], scaledNodes[1][1]-canvasData.viewpoint[1])
-                  )
-
-    myCanvas.create_rectangle((panNodes[0][0], panNodes[0][1], panNodes[1][0], panNodes[1][1]), fill='black')
-
-
-
-###
-# Mouse data
-###
+import canvas.draw as canvasDraw
 
 # PAN #
 
@@ -57,7 +28,7 @@ def drag(event):
 
     # Redraw canvas
     w = event.widget
-    draw(w)
+    canvasDraw.geo(w)
 
     # Reset imported values
     canvasData.mousePosition = (x,y)
@@ -93,6 +64,6 @@ def zoom(event):
 
     # Redraw canvas
     w = event.widget
-    draw(w)
+    canvasDraw.geo(w)
 
     return

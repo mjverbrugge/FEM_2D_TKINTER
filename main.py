@@ -10,7 +10,8 @@ from tkinter import *
 
 # Custom imports
 import canvas.data as canvasData
-import canvas.functions as canvasFunc
+import canvas.mouse as canvasFunc
+import canvas.draw as canvasDraw
 
 ####################################################################
 ##                            FUNCTIONS                           ##
@@ -53,7 +54,7 @@ myCanvas.grid(row=0, column=0, sticky='nswe')
 # Dummy shape - Initial draw
 h,w = getCanvasSize(root, myCanvas)
 canvasData.viewpoint = [-h/2., -w/2.]
-canvasFunc.draw(myCanvas)
+canvasDraw.geo(myCanvas)
 
 
 ###
